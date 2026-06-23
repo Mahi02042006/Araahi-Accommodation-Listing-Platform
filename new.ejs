@@ -1,0 +1,412 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h3>Create A New Listing</h3>
+            <form method="post" action="/listings" novalidate class="needs-validation">
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" name="listing[title]" placeholder="Add a catchy title" class="form-control" required>
+                    <div class="invalid-feedback">Please add a tittle</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="desription" class="form-label">Description:</label>
+                    <textarea name="listing[description]" class="form-control"
+                        placeholder="Share details about your place" required></textarea>
+                    <div class="invalid-feedback">Please add valid description</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image Link:</label>
+                    <input type="text" name="listing[image][url]" placeholder="Enter image URL/Link"
+                        class="form-control">
+                </div>
+
+
+                <div class="row">
+
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price:</label>
+                        <input type="number" name="listing[price]" placeholder="Enter price" class="form-control"
+                            min="100" required>
+                        <div class="invalid-feedback">Please add valid amount</div>
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label class="form-label">Country:</label>
+                        <input type="text" name="listing[country]" placeholder="Enter Country" class="form-control"
+                            pattern="[A-Za-z\s]+" required>
+                        <div class="invalid-feedback">Country name should be valid</div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+
+                    <div class="mb-3 col-md-4">
+                        <label for="state" class="form-label">State:</label>
+                        <input type="text" name="listing[state]" placeholder="Enter State" class="form-control"
+                            pattern="[A-Za-z\s]+" required>
+                        <div class="invalid-feedback">Please enter valid state</div>
+                    </div>
+
+                    <div class="mb-3 col-md-4">
+                        <label for="city" class="form-label">City:</label>
+                        <input type="text" name="listing[city]" placeholder="Enter City" class="form-control"
+                            pattern="[A-Za-z\s]+" required>
+                        <div class="invalid-feedback">Please add a valid City</div>
+                    </div>
+
+                    <div class="mb-3 col-md-4">
+                        <label for="zip" class="form-label">Zip-Code:</label>
+                        <input type="number" name="listing[zip]" placeholder="Enter Zip Code" class="form-control"
+                            required>
+                        <div class="invalid-feedback">Please add a valid zip code</div>
+                    </div>
+
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" name="listing[location]"
+                        placeholder="Tell guests about your location and nearby highlights" class="form-control"
+                        required>
+                    <div class="invalid-feedback">Please add your location</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="about" class="form-label">About me:</label>
+                    <textarea name="listing[about]" placeholder="Tell others something fun and punchy about you"
+                        class="form-control"></textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-dark mt-3 add-btn">Submit</button><br><br>
+            </form>
+        </div>
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h3>Create A New Listing</h3>
+
+    <form method="POST" action="/listings" novalidate class="needs-validation">
+
+      
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" name="listing[title]" class="form-control" required>
+        <div class="invalid-feedback">Please add a title</div>
+      </div>
+
+      
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required></textarea>
+        <div class="invalid-feedback">Please add a description</div>
+      </div>
+
+      
+      <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <input type="text" name="listing[image][url]" class="form-control">
+      </div>
+
+      
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label class="form-label">Price</label>
+          <input
+            type="number"
+            name="listing[price]"
+            class="form-control"
+            min="100"
+            required
+          >
+          <div class="invalid-feedback">Minimum price is 100</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label class="form-label">Country</label>
+          <select
+            id="country"
+            name="listing[country]"
+            class="form-select"
+            required
+          >
+            <option value="">Select Country</option>
+          </select>
+          <div class="invalid-feedback">Please select a country</div>
+        </div>
+      </div>
+
+      
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label class="form-label">State</label>
+          <select
+            id="state"
+            name="listing[state]"
+            class="form-select"
+            required
+          >
+            <option value="">Select State</option>
+          </select>
+          <div class="invalid-feedback">Please select a state</div>
+        </div>
+
+        <div class="mb-3 col-md-8">
+          <label class="form-label">City</label>
+          <input
+            type="text"
+            name="listing[city]"
+            class="form-control"
+            pattern="[A-Za-z\s]+"
+            required
+          >
+          <div class="invalid-feedback">Please enter a valid city</div>
+        </div>
+      </div>
+
+      
+      <div class="mb-3">
+        <label class="form-label">Location</label>
+        <input
+          type="text"
+          name="listing[location]"
+          class="form-control"
+          required
+        >
+        <div class="invalid-feedback">Please add location details</div>
+      </div>
+
+      
+      <div class="mb-3">
+        <label class="form-label">About</label>
+        <textarea name="listing[about]" class="form-control"></textarea>
+      </div>
+
+      <button class="btn btn-dark mt-3">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/country-state-city@3.0.0/dist/csc.min.js"></script>
+
+<script>
+  // 🔎 Safety check (very important)
+  console.log("CSC:", window.CSC);
+
+  const countrySelect = document.getElementById("country");
+  const stateSelect = document.getElementById("state");
+
+  // ✅ Correct access path
+  const countries = CSC.Country.getAllCountries();
+
+  countries.forEach(c => {
+    const option = document.createElement("option");
+    option.value = c.isoCode;   // IN, US, etc.
+    option.textContent = c.name;
+    countrySelect.appendChild(option);
+  });
+
+  countrySelect.addEventListener("change", function () {
+    stateSelect.innerHTML = "<option value=''>Select State</option>";
+    if (!this.value) return;
+
+    const states = CSC.State.getStatesOfCountry(this.value);
+    states.forEach(s => {
+      const option = document.createElement("option");
+      option.value = s.name;
+      option.textContent = s.name;
+      stateSelect.appendChild(option);
+    });
+  });
+</script>
+
+
+<script>
+  (() => {
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  <body>
+        <div class="row mt-3">
+            <div class="col-8 offset-2">
+                <h3>Create A New Listing</h3>
+                <form method="post" action="/listings" novalidate class="needs-validation">
+
+
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title:</label>
+                        <input type="text" name="listing[title]" placeholder="Enter title" class="form-control"
+                            required>
+                        <div class="valid-feedback">Title looks good!</div>
+                        <div class="invalid-feedback">Please add a tittle</div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="desription" class="form-label">Description:</label>
+                        <textarea name="listing[description]" class="form-control"
+                            placeholder="Share details about your place" required></textarea>
+                        <div class="valid-feedback">Thanks for describing your place</div>
+                        <div class="invalid-feedback">Please add valid description</div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Image Link:</label>
+                        <input type="text" name="listing[image][url]" placeholder="Enter image URL/Link"
+                            class="form-control">
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price:</label>
+                            <input type="number" name="listing[price]" placeholder="Enter price" class="form-control"
+                                min="100" required>
+                            <div class="valid-feedback">Amount has been added</div>
+                            <div class="invalid-feedback">Please add valid amount</div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label class="form-label">Country:</label>
+                            <select id="country" name="listing[country]" class="form-select" required>
+                                <option value="">Select Country</option>
+                            </select>
+                            <div class="invalid-feedback">Please add a valid country</div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="mb-3 col-md-4">
+                            <label for="state" class="form-label">State:</label>
+                            <input type="text" name="listing[state]" placeholder="Enter State" class="form-control"
+                                pattern="[A-Za-z\s]+" required>
+                            <div class="valid-feedback">State has been added</div>
+                            <div class="invalid-feedback">Please enter valid state</div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="city" class="form-label">City:</label>
+                            <input type="text" name="listing[city]" placeholder="Enter City" class="form-control"
+                                pattern="[A-Za-z\s]+" required>
+                            <div class="valid-feedback">City added</div>
+                            <div class="invalid-feedback">Please add a valid City</div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location:</label>
+                        <input type="text" name="listing[location]"
+                            placeholder="Tell guests about your location and nearby highlights" class="form-control"
+                            required>
+                        <div class="valid-feedback">Location added</div>
+                        <div class="invalid-feedback">Please add your location</div>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label for="about" class="form-label">About me:</label>
+                        <textarea name="listing[about]" placeholder="Tell others something fun and punchy about you"
+                            class="form-control"></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-dark mt-3 add-btn">Submit</button><br><br>
+                </form>
+
+                <script src="https://unpkg.com/country-state-city@3.0.0/dist/csc.min.js"></script>
+
+                <script>
+                    const countrySelect = document.getElementById("country");
+                    const stateSelect = document.getElementById("state");
+
+                    const countries = CSC.Country.getAllCountries();
+                    countries.forEach(c => {
+                        const option = document.createElement("option");
+                        option.value = c.isoCode;   // store ISO code (BEST)
+                        option.textContent = c.name;
+                        countrySelect.appendChild(option);
+                    });
+
+                    countrySelect.addEventListener("change", function () {
+                        stateSelect.innerHTML = "<option value=''>Select state</option>";
+                        const states = CSC.State.getStatesOfCountry(this.value);
+                        states.forEach(s => {
+                            const option = document.createElement("option");
+                            option.value = s.name;
+                            option.textContent = s.name;
+                            stateSelect.appendChild(option);
+                        });
+                    });
+                </script>
+
+
+            </div>
+        </div>
+    </body> -->

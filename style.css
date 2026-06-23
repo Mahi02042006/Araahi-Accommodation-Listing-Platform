@@ -1,0 +1,203 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.main-content {
+    flex: 1;
+}
+
+.light-text {
+    font-weight: 300;
+}
+
+.regular-text {
+    font-weight: 400;
+}
+
+.medium-text {
+    font-weight: 500;
+}
+
+.semibold-text {
+    font-weight: 600;
+}
+
+/* navbar */
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: #ff385c;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.brand-logo i {
+    font-size: 2rem;
+    line-height: 1;
+    position: relative;
+    top: 2px;
+}
+
+.brand-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    line-height: 1;
+    color: #ff385c;
+    font-family: 'Nunito', sans-serif;
+}
+
+.brand-text:hover {
+    color: #ff385c;
+    text-decoration: none;
+}
+
+.brand-logo:hover i {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-brands {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+    /* important is use to override bootstrap by default styling */
+}
+
+/* footer */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+    width: 100%;
+    /* vertical-align: middle; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.f-info-socials i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    color: black;
+}
+
+.footer-info {
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/*Card*/
+/*index*/
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text p {
+    font-weight: 400 !important;
+}
+
+.listing-links {
+    text-decoration: none;
+}
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: whitesmoke;
+}
+
+
+/*New*/
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/*Edit*/
+
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/*show page*/
+.show-img {
+    height: 30vh;
+}
+
+.btns {
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin: auto;
+}
+
+.show-head {
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show-head h3 {
+    width: fit-content;
+}
+
+h3 {
+    margin-top: 0;
+}
+
+.show-head h3 {
+    margin: 0;
+}

@@ -1,0 +1,29 @@
+Listing :
+• title
+• description
+• image
+• price
+• location
+• country
+
+1. INDEX ROUTE => GET request "/listings" => return all listings
+2. SHOW ROUTE => GET request "/listings/:id" => specific listing data (view)
+3. Create: NEW & CREATE ROUTE => GET request "/listings/new => FORM => submit => POST request "/listings"
+4. Update: EDIT AND UPDATE ROUTE => GET request "/listings/:id/edit => Form => submit => PATCH/PUT request "/listings"
+5. Delete: DELETE ROUTE => DELETE request "/listings/:id"
+
+
+
+FORM VALIDATIONS - 
+When we enter in the form, the browser and/or the web server will check to see that the data is in the correct format and within the constraints set by the application.
+
+
+Schema Validation - 
+
+
+
+Joi.dev is used for schema validation schema not of mongoose but of server
+
+
+
+---------------------phase 1 ending-----------------------------------------
